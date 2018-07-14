@@ -1,4 +1,4 @@
-FROM phusion/baseimage:latest
+FROM openjdk:8
 
 ENV SONAR_VERSION=7.2 \
     SONARQUBE_HOME=/opt/sonarqube \
