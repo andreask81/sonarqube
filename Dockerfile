@@ -14,7 +14,9 @@ ENV SONAR_VERSION=7.2 \
     # Defaults to using H2
     SONARQUBE_JDBC_USERNAME=sonar \
     SONARQUBE_JDBC_PASSWORD=sonar \
-    SONARQUBE_JDBC_URL=
+    SONARQUBE_JDBC_URL= \
+    TLS_CERT=/etc/tls/tls.crt \
+    TLS_KEY=/etc/tls/tls.key
 
 # Http port
 EXPOSE 9000
