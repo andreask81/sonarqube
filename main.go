@@ -22,7 +22,7 @@ import (
 )
 
 func main() {
-	port := "9000"
+	port := "8443"
 	if fromEnv := os.Getenv("PORT"); fromEnv != "" {
 		port = fromEnv
 	}
@@ -36,7 +36,7 @@ func main() {
 
 	// register hello function to handle all requests
 	server := http.NewServeMux()
-/*	server.HandleFunc("/", hello) */
+	server.HandleFunc("/", hello)
 
 	// start the web server on port and accept requests
 	log.Printf("tls cert: %s", tlsCert)
@@ -47,13 +47,13 @@ func main() {
 }
 
 // hello responds to the request with a plain-text "Hello, world" message.
-/*func hello(w http.ResponseWriter, r *http.Request) {
+func hello(w http.ResponseWriter, r *http.Request) {
 	log.Printf("Serving request: %s", r.URL.Path)
-	host, _ := os.Hostname()
+/*	host, _ := os.Hostname()
 	fmt.Fprintf(w, "Hello, world!\n")
 	fmt.Fprintf(w, "Protocol: %s!\n", r.Proto)
 	fmt.Fprintf(w, "Hostname: %s\n", host)
 	if headerIP := r.Header.Get("X-Forwarded-For"); headerIP != "" {
-		fmt.Fprintf(w, "Client IP (X-Forwarded-For): %s\n", headerIP)
-	}
-}*/
+		log.Fprintf(w, "Client IP (X-Forwarded-For): %s\n", headerIP)
+	}*/
+}
