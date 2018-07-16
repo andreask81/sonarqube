@@ -2,7 +2,7 @@ FROM openjdk:8
 
 ENV SONAR_VERSION=7.2 \
     SONARQUBE_HOME=/opt/sonarqube \
-    # Database configuration
+    # Database configuration#
     # Defaults to using H2
     SONARQUBE_JDBC_USERNAME=sonar \
     SONARQUBE_JDBC_PASSWORD=sonar \
