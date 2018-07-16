@@ -1,14 +1,6 @@
-FROM golang:1.8-alpine
-ADD . /go/src/sonar-app
-RUN go install sonar-app
-
-FROM alpine:latest
-COPY --from=0 /go/bin/sonar-app .
-CMD ["./sonar-app"]
-
 FROM openjdk:8
 
-ENV SONAR_VERSION=7.1 \
+ENV SONAR_VERSION=7.2 \
     TLS_CERT=/etc/tls/tls.crt \
     TLS_KEY=/etc/tls/tls.key \
     SONARQUBE_HOME=/opt/sonarqube \
