@@ -1,8 +1,6 @@
 FROM openjdk:8
 
 ENV SONAR_VERSION=7.2 \
-    TLS_CERT=/etc/tls/tls.crt \
-    TLS_KEY=/etc/tls/tls.key \
     SONARQUBE_HOME=/opt/sonarqube \
     # Database configuration
     # Defaults to using H2
